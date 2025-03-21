@@ -1,156 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Layout with Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: row;
-            background: #ECF0F1;
-        }
-        nav {
-            background: #1B4F72;
-            color: white;
-            flex: 1;
-            padding: 2em 1.5em;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-        }
-        .logo {
-            display: block;
-            margin: 0 auto 20px;
-            width: 80px;
-            height: auto;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 15px 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #F39C12;
-        }
-        .outer-col-2 {
-            display: flex;
-            flex-direction: column;
-            flex: 5;
-        }
-        header, footer {
-            background: #117A65;
-            color: white;
-            text-align: center;
-            padding: 1.5em;
-            font-weight: bold;
-        }
-        .inner-row {
-            display: flex;
-            flex-direction: row;
-            padding: 2em;
-        }
-        .inner-col {
-            flex: 4;
-            padding: 2em;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        aside {
-            background: #E67E22;
-            color: white;
-            flex: 1;
-            padding: 2em;
-            text-align: center;
-            border-radius: 10px;
-            margin-left: 2em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 2em;
-        }
-        .gallery-heading {
-            text-align: center;
-            font-size: 1.8em;
-            margin-bottom: 1.5em;
-            font-weight: bold;
-            color: #333;
-        }
-        .gallery img {
-            margin: 10px;
-            border: 3px solid #000;
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
-            max-width: 30%;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            .inner-row {
-                flex-direction: column;
-            }
-            aside {
-                margin-left: 0;
-                margin-top: 1.5em;
-            }
-            .gallery img {
-                max-width: 45%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridge Labz</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #F6F3EB;
+      padding: 20px;
+    }
+    .container {
+      background: #fff;
+      padding: 3em;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+    }
+    .media {
+      display: flex;
+      align-items: center;
+      gap: 1.5em;
+      margin-bottom: 2em;
+    }
+    .media-object {
+      max-width: 150px;
+      height: auto;
+      border-radius: 12px;
+    }
+    .media-body {
+      text-align: left;
+      flex: 1;
+    }
+    .media-heading {
+      margin-bottom: 0.5em;
+      font-size: 1.5em;
+      color: #333;
+    }
+    p {
+      font-size: 1.1em;
+      color: #666;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <img src="BL_logo_square_png.png" alt="Logo" class="logo">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="outer-col-2">
-        <header>Header</header>
-        <div class="inner-row">
-            <div class="inner-col">
-                <article>Content</article>
-                <h2 class="gallery-heading">Photo Gallery</h2>
-                <div class="gallery">
-                    <img src="BL_logo_square_jpg.jpg" alt="Image 1">
-                    <img src="BL_logo_square_jpg.jpg" alt="Image 2">
-                    <img src="BL_logo_square_png.png" alt="Image 3">
-                    <img src="BL_logo_square_png.png" alt="Image 4">
-                </div>
-                <footer>Footer</footer>
-            </div>
-            <aside>Sidebar</aside>
-        </div>
+
+<div class="container">
+  <div class="media">
+    <img class="media-object" src="BL_logo_square_png.png" alt="Sample photo">
+    <div class="media-body">
+      <h3 class="media-heading">Organically Synthesized</h3>
+      <p>Leverage agile frameworks to provide a robust synopsis for high-level overviews.</p>
     </div>
+  </div>
+
+  <div class="media">
+    <img class="media-object" src="BL_logo_square_jpg.jpg" alt="Sample photo">
+    <div class="media-body">
+      <h3 class="media-heading">Eco Processing</h3>
+      <p>Holistically predominate extensible testing procedures for reliable supply chains.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
