@@ -1,156 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge_Labz-Div</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: row;
-            background: #ECF0F1;
-        }
-        nav {
-            background: #1B4F72;
-            color: white;
-            flex: 1;
-            padding: 2em 1.5em;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-        }
-        .logo {
-            display: block;
-            margin: 0 auto 20px;
-            width: 80px;
-            height: auto;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 15px 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #F39C12;
-        }
-        .outer-col-2 {
-            display: flex;
-            flex-direction: column;
-            flex: 5;
-        }
-        header, footer {
-            background: #117A65;
-            color: white;
-            text-align: center;
-            padding: 1.5em;
-            font-weight: bold;
-        }
-        .inner-row {
-            display: flex;
-            flex-direction: row;
-            padding: 2em;
-        }
-        .inner-col {
-            flex: 4;
-            padding: 2em;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        aside {
-            background: #E67E22;
-            color: white;
-            flex: 1;
-            padding: 2em;
-            text-align: center;
-            border-radius: 10px;
-            margin-left: 2em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 2em;
-        }
-        .gallery-heading {
-            text-align: center;
-            font-size: 1.8em;
-            margin-bottom: 1.5em;
-            font-weight: bold;
-            color: #333;
-        }
-        .gallery img {
-            margin: 10px;
-            border: 3px solid #000;
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
-            max-width: 30%;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            .inner-row {
-                flex-direction: column;
-            }
-            aside {
-                margin-left: 0;
-                margin-top: 1.5em;
-            }
-            .gallery img {
-                max-width: 45%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridge_Labz-Div</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: row;
+      background: #ECF0F1;
+    }
+    /* Navigation */
+    nav {
+      background: #1B4F72;
+      color: white;
+      flex: 1;
+      padding: 2em 1.5em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 80px;
+      height: auto;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 15px 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #F39C12;
+    }
+    /* Main layout */
+    .outer-col-2 {
+      display: flex;
+      flex-direction: column;
+      flex: 5;
+    }
+    header, footer {
+      background: #117A65;
+      color: white;
+      text-align: center;
+      padding: 1.2em;
+      font-weight: bold;
+    }
+    .inner-row {
+      display: flex;
+      flex-direction: row;
+      padding: 2em;
+    }
+    .inner-col {
+      flex: 4;
+      padding: 2em;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    aside {
+      background: #E67E22;
+      color: white;
+      flex: 1;
+      padding: 1.5em;
+      text-align: center;
+      border-radius: 10px;
+      margin-left: 2em;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    /* Cards Section */
+    .cards-container {
+      max-height: 300px; /* Limits height */
+      overflow-y: auto; /* Enables scrolling */
+      margin-top: 2em;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .card {
+      flex: 0 0 200px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      max-width: 100%;
+      height: auto;
+    }
+    .card .text {
+      padding: 10px;
+      text-align: center;
+    }
+    .card .text > button {
+      background: gray;
+      border: 0;
+      color: white;
+      padding: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+    /* Media Section */
+    .media-container {
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 1em;
+      background: #F6F3EB;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .media {
+      display: flex;
+      align-items: flex-start;
+      padding: 1em;
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+    }
+    .media:last-child {
+      border-bottom: none;
+    }
+    .media-object {
+      width: 60px;
+      height: 60px;
+      margin-right: 1em;
+      border-radius: 5px;
+    }
+    .media-body {
+      flex: 1;
+    }
+    .media-heading {
+      margin-bottom: 0.5em;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .inner-row {
+        flex-direction: column;
+      }
+      aside {
+        margin-left: 0;
+        margin-top: 1.5em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <img src="BL_logo_square_png.png" alt="Logo" class="logo">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="outer-col-2">
-        <header>Header</header>
-        <div class="inner-row">
-            <div class="inner-col">
-                <article>Content</article>
-                <h2 class="gallery-heading">Photo Gallery</h2>
-                <div class="gallery">
-                    <img src="BL_logo_square_jpg.jpg" alt="Image 1">
-                    <img src="BL_logo_square_jpg.jpg" alt="Image 2">
-                    <img src="BL_logo_square_png.png" alt="Image 3">
-                    <img src="BL_logo_square_png.png" alt="Image 4">
-                </div>
-                <footer>Footer</footer>
-            </div>
-            <aside>Sidebar</aside>
+  <nav>
+    <img src="BL_logo_square_jpg.jpg" alt="Logo" class="logo">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="outer-col-2">
+    <header>Header</header>
+    <div class="inner-row">
+      <div class="inner-col">
+        <h2>Photo Gallery</h2>
+        <div class="cards-container">
+          <section class="cards">
+            <article class="card">
+              <img src="BL_logo_square_jpg.jpg" alt="Sample photo">
+              <div class="text">
+                <h3>Seamless Quality</h3>
+                <button>Here's why</button>
+              </div>
+            </article>
+            <article class="card">
+              <img src="BL_logo_square_jpg.jpg" alt="Sample photo">
+              <div class="text">
+                <h3>Synergize</h3>
+                <button>Here's how</button>
+              </div>
+            </article>
+            <article class="card">
+              <img src="BL_logo_square_jpg.jpg" alt="Sample photo">
+              <div class="text">
+                <h3>Innovate</h3>
+                <button>Read more</button>
+              </div>
+            </article>
+          </section>
         </div>
+        <section class="media-container">
+          <div class="media">
+            <img class="media-object" src="BL_logo_square_jpg.jpg" alt="Sample photo">
+            <div class="media-body">
+              <h3 class="media-heading">Synthesized</h3>
+              <p>Agile frameworks for high-level overviews.</p>
+            </div>
+          </div>
+          <div class="media">
+            <img class="media-object" src="BL_logo_square_jpg.jpg" alt="Sample photo">
+            <div class="media-body">
+              <h3 class="media-heading">Eco Processing</h3>
+              <p>Extensible testing for supply chains.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <aside>Sidebar</aside>
     </div>
+    <footer>Footer</footer>
+  </div>
 </body>
 </html>
